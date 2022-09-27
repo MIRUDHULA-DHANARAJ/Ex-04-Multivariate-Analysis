@@ -38,8 +38,11 @@ Register Number : 21222123060
 
 
 import pandas as pd
+
 import numpy as np
+
 import seaborn as sbn
+
 import matplotlib.pyplot as plt
 
 df = pd.read_csv("SuperStore.csv")
