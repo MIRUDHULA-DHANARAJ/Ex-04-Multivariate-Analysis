@@ -60,30 +60,51 @@ df.dtypes
 sbn.scatterplot(df['Postal Code'],df['Sales'])
 
 states=df.loc[:,["State","Sales"]]
+
 states=states.groupby(by=["State"]).sum().sort_values(by="Sales")
+
 plt.figure(figsize=(17,7))
+
 sbn.barplot(x=states.index,y="Sales",data=states)
+
 plt.xticks(rotation = 90)
+
 plt.xlabel=("STATES")
+
 plt.ylabel=("SALES")
+
 plt.show()
 
 states=df.loc[:,["State","Postal Code"]]
+
 states=states.groupby(by=["State"]).sum().sort_values(by="Postal Code")
+
 plt.figure(figsize=(17,7))
+
 sbn.barplot(x=states.index,y="Postal Code",data=states)
+
 plt.xticks(rotation = 90)
+
 plt.xlabel=("STATES")
+
 plt.ylabel=("Postal Code")
+
 plt.show()
 
 states=df.loc[:,["Segment","Sales"]]
+
 states=states.groupby(by=["Segment"]).sum().sort_values(by="Sales")
+
 #plt.figure(figsize=(10,7))
+
 sbn.barplot(x=states.index,y="Sales",data=states)
+
 plt.xticks(rotation = 90)
+
 plt.xlabel=("SEGMENT")
+
 plt.ylabel=("SALES")
+
 plt.show()
 
 sbn.barplot(df['Postal Code'],df['Ship Mode'],hue=df['Region'])
